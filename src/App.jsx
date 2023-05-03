@@ -2,15 +2,26 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import './App.css'
 import Card from '../components/Card'
+import data from './data'
+
 
 function App() {
+  const cards=data.map(item =>{
   return (
-   <>
-    <Navbar />
- <Hero />
- <Card />
- </>
+ <Card
+ key={item.id}
+ item={item}
+ />
   )
+})
+return (
+  <div>
+      <Navbar />
+      <Hero />
+      {cards}
+  </div>
+)
+
 }
 
 export default App
